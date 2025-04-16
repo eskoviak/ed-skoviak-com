@@ -1,6 +1,6 @@
-# Myapp
+# eskoviak.com
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.0.
+This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.0.  It has since been migrated to Google Firebase Studio.
 
 ## Development server
 
