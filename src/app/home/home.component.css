@@ -1,5 +1,3 @@
 .pagebg {
-    background-image: url("/assets/NorthShoreCairns.png");
-    height: 300px;
-    font-style: italic;
+    background-image: linear-gradient(rgba(181, 219, 250, 0.137), rgba(127, 148, 187, 0.027));
 }

@@ -1,5 +1,6 @@
 <main class="main">
   <div class="content">
+    <!--
     <div class="toolbar">
       <button mat-fab [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
         <mat-icon>more_vert</mat-icon>
@@ -29,15 +30,18 @@
         </svg>
       </a>
     </div>
-    <img src="../assets/NorthShoreCairns.png" alt="Cairns on Minnesota's North Shore of Lake Superior">
-
+    -->
+    <img src="assets/NorthShoreCairns.png" height="300" width="100%" alt="Cairns on Minnesota's North Shore of Lake Superior">
+    <p></p>  
 
     <div class="card highlight-card card-small">
       <span>{{ title }}</span>
     </div>
     <router-outlet />
     <footer>
-      <p>&copy; 2025 Ed Skoviak Computing</p>
+      <div class="footer">
+        &copy; 2025 Ed Skoviak Computing
+      </div>
     </footer>
   </div>
 
