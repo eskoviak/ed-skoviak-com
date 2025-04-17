@@ -76,7 +76,7 @@ img {
     background-color: #d3e4ff;
     height: 40px;
     width: 200px;
-    margin: 0 8px 16px;
+    margin: 8px;
     padding: 16px;
     display: flex;
     flex-direction: row;
@@ -106,7 +106,7 @@ img {
     justify-content: space-around;
     width: 100%;
     max-width: 700px;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
 }
 
 .content h1 {
@@ -114,7 +114,7 @@ img {
 }
 
 .content p {
-    margin-top: 1.5rem;
+    margin-top: 1rem;
 }
 
 .divider {
@@ -122,6 +122,11 @@ img {
     background: var(--red-to-pink-to-purple-vertical-gradient);
     margin-inline: 0.5rem;
 }
+
+.toolbar-spacer {
+    flex: 1 1 auto;
+  }
+  
 
 .footer {
     justify-content: center;
@@ -201,8 +206,8 @@ img {
     height: 60px;
     display: flex;
     align-items: center;
-    background-color: #99acc2;
-    color: white;
+    background-color: #e6f0fc;
+    color: rgb(52, 2, 145);
     font-weight: 600;
   }
   
