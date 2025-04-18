@@ -2,26 +2,49 @@
   <div class="content">
 
     <mat-toolbar>
-      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-        <mat-icon>menu</mat-icon>
-      </button>
-      <span>Ed Skoviak Computing</span>
-      <button mat-raised-button matTooltip="Info about the action" [matTooltipPosition]='position'
-        aria-label="Button that displays a tooltip in various positions">
-        Business
-      </button>
-      <span class="toolbar-spacer"></span>
-      <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-        <mat-icon>favorite</mat-icon>
-      </button>
-      <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-        <mat-icon>share</mat-icon>
-      </button>
+      <mat-toolbar-row>
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <a routerLink="Home" routerLinkActive="active">Ed Skoviak Computing</a>
+        <span class="toolbar-spacer"></span>
+        <!--
+        <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+          <mat-icon>favorite</mat-icon>
+        </button>
+        -->
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+          <mat-icon>share</mat-icon>
+        </button>
+
+      </mat-toolbar-row>
+      <mat-toolbar-row>
+        <span class="toolbar-spacer"></span>
+        <button mat-raised-button matTooltip="Business Architecture" [matTooltipPosition]='position'
+          aria-label="Go to the Business Architecture page" (click)="onClick($event, 'Business')">
+          Business
+        </button>
+        &nbsp;&nbsp;
+        <button mat-raised-button matTooltip="Data Architecture" [matTooltipPosition]='position'
+          aria-label="Go to the Data Architecture page">
+          Data
+        </button>
+        &nbsp;&nbsp;        
+        <button mat-raised-button matTooltip="Business Architecture" [matTooltipPosition]='position'
+          aria-label="Go to the Business Architecture page">
+          Application
+        </button>
+        &nbsp;&nbsp;        
+        <button mat-raised-button matTooltip="Business Architecture" [matTooltipPosition]='position'
+          aria-label="Go to the Business Architecture page">
+          Technology
+        </button>
+        <span class="toolbar-spacer"></span>
+      </mat-toolbar-row>
     </mat-toolbar>
 
-
     <img src="assets/NorthShoreCairns.png" height="300" width="100%"
-      alt="Cairns on Minnesota's North Shore of Lake Superior">
+      alt="Cairns on Minnesota's North Shore of Lake Superior" matTooltip="Cairns on Minnesota's North Shore">
 
     <div class="card highlight-card card-small">
       <span>{{ title }}</span>
