@@ -7,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrl: './business.component.css'
 })
 export class BusinessComponent {
+  title = "What or Who is the Business?"
 
 }

@@ -2,6 +2,8 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.0.  It has since been migrated to Google Firebase Studio.
 
+This is the main web site for Ed Skoviak Computing
+
 ## Development server
 
 To start a local development server, run:

@@ -3,10 +3,20 @@
 
     <mat-toolbar>
       <mat-toolbar-row>
-        <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon"
+          [mat-menu-trigger-for]="topMenu">
           <mat-icon>menu</mat-icon>
         </button>
-        <a routerLink="Home" routerLinkActive="active">Ed Skoviak Computing</a>
+        <mat-menu #topMenu="matMenu">
+          <button mat-menu-item>
+            <mat-icon>home</mat-icon>
+            <a routerLink="home" routerLinkActive="active">Home</a>
+          </button>
+          <button mat-menu-item>
+            <mat-icon></mat-icon>
+          </button>
+        </mat-menu>
+        <a routerLink="home" routerLinkActive="active">Ed Skoviak Computing</a>
         <span class="toolbar-spacer"></span>
         <!--
         <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
@@ -26,30 +36,28 @@
         </button>
         &nbsp;&nbsp;
         <button mat-raised-button matTooltip="Data Architecture" [matTooltipPosition]='position'
-          aria-label="Go to the Data Architecture page">
+          aria-label="Go to the Data Architecture page" (click)="onClick($event, 'Data')">
           Data
         </button>
-        &nbsp;&nbsp;        
-        <button mat-raised-button matTooltip="Business Architecture" [matTooltipPosition]='position'
-          aria-label="Go to the Business Architecture page">
+        &nbsp;&nbsp;
+        <button mat-raised-button matTooltip="Application Architecture" [matTooltipPosition]='position'
+          aria-label="Go to the Business Architecture page" (click)="onClick($event, 'Application')">
           Application
         </button>
-        &nbsp;&nbsp;        
-        <button mat-raised-button matTooltip="Business Architecture" [matTooltipPosition]='position'
-          aria-label="Go to the Business Architecture page">
+        &nbsp;&nbsp;
+        <button mat-raised-button matTooltip="Technology Architecture" [matTooltipPosition]='position'
+          aria-label="Go to the Business Architecture page" (click)="onClick($event, 'Technology')">
           Technology
         </button>
         <span class="toolbar-spacer"></span>
       </mat-toolbar-row>
     </mat-toolbar>
 
-    <img src="assets/NorthShoreCairns.png" height="300" width="100%"
-      alt="Cairns on Minnesota's North Shore of Lake Superior" matTooltip="Cairns on Minnesota's North Shore">
 
-    <div class="card highlight-card card-small">
-      <span>{{ title }}</span>
-    </div>
     <router-outlet />
+    <p>
+      <button mat-button (click)="openDialog()">Open Confirm Dialog</button>
+    </p>
     <footer>
       <div class="footer">
         &copy; 2025 Ed Skoviak Computing
