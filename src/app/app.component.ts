@@ -7,7 +7,7 @@ import {MatButtonModule} from '@angular/material/button';
 import { MatDialog } from '@angular/material/dialog';
 import {TooltipPosition, MatTooltipModule} from '@angular/material/tooltip';
 import {MatDialogModule} from '@angular/material/dialog';
-import { ConfirmationDialog } from './application/confirmation-dialog.component';
+import { ConfirmationDialog } from './dialogs/confirmation-dialog.component';
 
 
 @Component({
@@ -54,10 +54,10 @@ export class AppComponent {
   openDialog() {
     const dialogRef = this.dialog.open(ConfirmationDialog,{
       data:{
-        message: 'Are you sure want to delete?',
+        message: 'This is an over-ridden message',
         buttonText: {
-          ok: 'Save',
-          cancel: 'No'
+          ok: 'Yea',
+          cancel: 'Nay'
         }
       }
     });
@@ -65,14 +65,10 @@ export class AppComponent {
 
     dialogRef.afterClosed().subscribe((confirmed: boolean) => {
       if (confirmed) {
-        //snack.dismiss();
-        const a = document.createElement('a');
-        a.click();
-        a.remove();
-        //snack.dismiss();
-        //this.snackBar.open('Closing snack bar in a few seconds', 'Fechar', {
-        //  duration: 2000,
-        //});
+        console.log('You clicked Save')
+      }
+      else {
+        console.log('You clicked No')
       }
     });
   }

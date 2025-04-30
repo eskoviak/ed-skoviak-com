@@ -5,6 +5,7 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA, MatDialogModule } from '@angu
   selector: 'confirmation-dialog',
   imports: [MatDialogModule],
   templateUrl: './confirmation-dialog.html',
+  styleUrl: './dialogs.css'
 })
 export class ConfirmationDialog {
   message: string = "Are you sure?"

@@ -9,4 +9,6 @@ import { Component } from '@angular/core';
 export class TechnologyComponent {
   title = "Technology Architecture"
 
+  constructor() {}
+
 }
