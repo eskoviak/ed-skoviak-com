@@ -1,46 +1,76 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Georgia, serif; }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Georgia, serif;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 
 a {
-    text-decoration: none;
-    color: gray;
-  }
-  
-  .card {
-    border-radius: 4px;
-    border: 1px solid #eee;
-    background-color: #d3e4ff;
-    height: 40px;
-    width: 200px;
-    margin: 8px;
-    padding: 16px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    transition: all 0.2s ease-in-out;
-    line-height: 24px;
-  }
+  text-decoration: none;
+  color: gray;
+}
 
-  .card.card-small {
-    height: 16px;
-    width: 168px;
-  }
+.button-container {
+  width: 100%;
+  height: 50px;
+  display: table;
+  border-collapse: separate;
+  border-spacing: 25px;
+}
 
-  .card.highlight-card {
-    background-color: #1976d2;
-    color: white;
-    font-weight: 600;
-    border: none;
-    width: auto;
-    min-width: 30%;
-    position: relative;
-  }
+.button-container .button {
+  display: table-cell;
+  text-align: center;
+  border: 1px solid #FF0000;
+  vertical-align: middle;
+}
 
-  .pagebg {
-    background-image: linear-gradient(rgba(85, 172, 243, 0.137), rgba(127, 148, 187, 0.027));
+.card {
+  border-radius: 4px;
+  border: 1px solid #eee;
+  background-color: #d3e4ff;
+  height: 40px;
+  width: 200px;
+  margin: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+  line-height: 24px;
+}
+
+.card.card-small {
+  height: 16px;
+  width: 168px;
+}
+
+.card.highlight-card {
+  background-color: #1976d2;
+  color: white;
+  font-weight: 600;
+  border: none;
+  width: auto;
+  min-width: 30%;
+  position: relative;
+}
+
+.pagebg {
+  background-image: linear-gradient(rgba(85, 172, 243, 0.137), rgba(127, 148, 187, 0.027));
 }

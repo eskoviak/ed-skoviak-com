@@ -23,6 +23,11 @@
           <mat-icon>favorite</mat-icon>
         </button>
         -->
+
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon"
+          (click)="onClickContactMe($event)">
+          <mat-icon>mail</mat-icon>
+        </button>
         <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
           <mat-icon>share</mat-icon>
         </button>
@@ -55,11 +60,13 @@
 
 
     <router-outlet />
-    
+
+    <!--
     <p>
       <button mat-button (click)="openDialog()">Open Confirm Dialog</button>
     </p>
-    
+    -->
+
     <footer>
       <div class="footer">
         &copy; 2025 Ed Skoviak Computing

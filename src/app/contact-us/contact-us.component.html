@@ -1,0 +1,24 @@
+<img src="assets/WoodsInUP.png" height="300" width="100%"
+    alt="Manmade Infrastructure" matTooltip="Manmade Infrastructure">
+
+<div class="card highlight-card card-small">
+    <span>{{ title }}</span>
+</div>
+<div class="pagebg">
+<p>
+    <label for="name">Name</label><br>
+    <input id="name" type="text" width="50%" [formControl]="nameControl">
+</p>
+<p>
+    <label for="email">Email</label><br>
+    <input id="email" type="text" [formControl]="emailControl">
+</p>
+<p>
+    <label for="'message">Message</label><br>
+    <textarea id="message" rows="4" [formControl]="messageControl"></textarea>
+</p>
+
+
+<button (click)="onSubmit()">Submit</button>
+</div> 
+
