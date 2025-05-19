@@ -28,7 +28,7 @@
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    
+
 }
 
 
@@ -95,8 +95,8 @@ img {
 
 .toolbar-spacer {
     flex: 1 1 auto;
-  }
-  
+}
+
 
 .footer {
     justify-content: center;
@@ -179,26 +179,49 @@ img {
     background-color: #e6f0fc;
     color: rgb(52, 2, 145);
     font-weight: 600;
-  }
-  
-  .toolbar img {
+}
+
+.toolbar img {
     margin: 0 16px;
-  }
-  
-  .toolbar #twitter-logo {
+}
+
+.toolbar #twitter-logo {
     height: 40px;
     margin: 0 8px;
-  }
-  
-  .toolbar #youtube-logo {
+}
+
+.toolbar #youtube-logo {
     height: 40px;
     margin: 0 16px;
-  }
-  
-  .toolbar #twitter-logo:hover,
-  .toolbar #youtube-logo:hover {
+}
+
+.toolbar #twitter-logo:hover,
+.toolbar #youtube-logo:hover {
     opacity: 0.8;
-  }
+}
+
+/* Button Classes */
+.business-button {
+    background-color: greenyellow;
+    color: rgb(6, 123, 35);
+}
+
+.data-button {
+    background-color: peachpuff;
+    color: rgb(52, 2, 145);
+}
+
+.application-button {
+    background-color: aqua;
+    color: rgb(52, 2, 145);
+}
+
+.technology-button {
+    background-color: plum;
+    color: purple;
+}
+
+
 
 @media screen and (max-width: 650px) {
     .content {

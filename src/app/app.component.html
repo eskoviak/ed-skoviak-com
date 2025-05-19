@@ -35,22 +35,22 @@
       </mat-toolbar-row>
       <mat-toolbar-row>
         <span class="toolbar-spacer"></span>
-        <button mat-raised-button matTooltip="Business Architecture" [matTooltipPosition]='position'
+        <button mat-button class="business-button" matTooltip="Business Architecture" [matTooltipPosition]='position'
           aria-label="Go to the Business Architecture page" (click)="onClick($event, 'Business')">
           Business
         </button>
         &nbsp;&nbsp;
-        <button mat-raised-button matTooltip="Data Architecture" [matTooltipPosition]='position'
+        <button mat-button disabled class="data-button" matTooltip="Data Architecture"  [matTooltipPosition]='position'
           aria-label="Go to the Data Architecture page" (click)="onClick($event, 'Data')">
           Data
         </button>
         &nbsp;&nbsp;
-        <button mat-raised-button matTooltip="Application Architecture" [matTooltipPosition]='position'
+        <button mat-button disabled class="application-button" matTooltip="Application Architecture" [matTooltipPosition]='position'
           aria-label="Go to the Business Architecture page" (click)="onClick($event, 'Application')">
           Application
         </button>
         &nbsp;&nbsp;
-        <button mat-raised-button matTooltip="Technology Architecture" [matTooltipPosition]='position'
+        <button mat-button disabled class="technology-button" matTooltip="Technology Architecture" [matTooltipPosition]='position'
           aria-label="Go to the Business Architecture page" (click)="onClick($event, 'Technology')">
           Technology
         </button>

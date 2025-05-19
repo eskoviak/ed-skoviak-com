@@ -8,8 +8,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { TooltipPosition, MatTooltipModule } from '@angular/material/tooltip';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ConfirmationDialog } from './dialogs/confirmation-dialog.component';
-
-
+ 
 @Component({
   selector: 'app-root',
   imports: [
