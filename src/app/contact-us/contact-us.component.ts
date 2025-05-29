@@ -24,53 +24,50 @@ export class ContactUsComponent {
   messageControl = new FormControl('');
 
   httpHeaders = new HttpHeaders({
-    'Content-Type': 'application/json'
+    'Content-Type': 'application/json',
+    'User-Agent': 'Angular ESC',
+    'Accept': '*/*',
+    'Access-Control-Allow-Origin': '*',
+    'Connection': 'keep-alive'
   })
-  /*
-  httpParams = new HttpParams({
-    fromObject: {
-      name: this.nameControl.value,
-      email: this.emailControl.value,
-      message: this.messageControl.value,
-    }
-  */    
   
-
   constructor(private router: Router, private http: HttpClient) { }
 
   onSubmit() {
-    //console.log('Name: ' + this.nameControl.value);
-    //console.log('Email: ' + this.emailControl.value);
-    //console.log('Message: ' + this.messageControl.value);
     const msgData: MsgData = {
       name: this.nameControl.value,
       email: this.emailControl.value,
       message: this.messageControl.value,
     }
-    //console.log(msgData);
-    this.sendMessage(msgData);
 
-    //this.nameControl.setValue('');
-    //this.emailControl.setValue('');
-    //this.messageControl.setValue('');
-    
-    this.router.navigate(['/home']);
-    
 
-  }
-
-  sendMessage(data: any) {
-    //console.log(body)
-
-    this.http.post('https://mail-sender-821892242376.us-south1.run.app',
-      data,
-      {
+    console.log(JSON.stringify(msgData));
+    /*
+    this.http.post<any>('https://mail-sender-821892242376.us-south1.run.app',
+      JSON.stringify(msgData),
+      { 
         headers: this.httpHeaders,
-        responseType: 'text'
-      }).subscribe({
-      next: (v) => console.log(v),
-      error: (e) => console.error(e),
-      complete: () => console.info('complete')}
-    );
+        observe: "events"
+      }
+      ).subscribe({
+      next (v) { console.log("next: ", v)},
+      error (e) {console.error("error: ", e)},
+      complete () {console.info('complete')}
+    });
+    */
+   
+    this.http.request('POST', 'https://mail-sender-821892242376.us-south1.run.app',
+      {
+        body: JSON.stringify(msgData),
+        headers: this.httpHeaders,
+        observe: "response"
+      }
+    ).subscribe({
+      next (v) { console.log("next: ", v)},
+      error (e) {console.error("error: ", e)},
+      complete () {console.info('complete')}
+    });
+
+    this.router.navigate(['/home']);
   }
 }
