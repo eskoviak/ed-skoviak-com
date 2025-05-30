@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Injectable } from '@angular/core';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 
 interface MsgData {
   name: string | null;
@@ -10,11 +10,16 @@ interface MsgData {
 }
 
 
+
 @Component({
   selector: 'app-contact-us',
   imports: [ ReactiveFormsModule],
   templateUrl: './contact-us.component.html',
   styleUrl: './contact-us.component.css'
+})
+
+@Injectable({
+  providedIn: 'root'
 })
 export class ContactUsComponent {
   title = "Contact Us"
@@ -55,7 +60,7 @@ export class ContactUsComponent {
       complete () {console.info('complete')}
     });
     */
-   
+
     this.http.request('POST', 'https://mail-sender-821892242376.us-south1.run.app',
       {
         body: JSON.stringify(msgData),

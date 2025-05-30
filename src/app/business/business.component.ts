@@ -11,8 +11,9 @@ import { MatDialog } from '@angular/material/dialog';
 export class BusinessComponent {
   title = "What or Who is the Business?"
 
-  constructor(public dialog: MatDialog) { }
+  constructor() { }
 
+  /*
   openConfirmationDialog() {
     const dialogRef = this.dialog.open(ConfirmationDialog, {
       data: {
@@ -22,4 +23,5 @@ export class BusinessComponent {
     });
 
   }
+  */
 }

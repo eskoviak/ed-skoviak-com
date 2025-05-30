@@ -6,12 +6,13 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 // Suggested code may be subject to a license. Learn more: ~LicenseLog:2321739814.
 // Suggested code may be subject to a license. Learn more: ~LicenseLog:3188332389.
-import { HttpClient, provideHttpClient } from '@angular/common/http';
+import { HttpClient, provideHttpClient, withFetch } from '@angular/common/http';
 
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
-    provideHttpClient()]
+    provideHttpClient(withFetch())
+  ]
 };

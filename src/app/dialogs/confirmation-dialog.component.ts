@@ -12,8 +12,12 @@ export class ConfirmationDialog {
   confirmButtonText = "Yes"
   cancelButtonText = "Cancel"
   constructor(
+    /*
     @Inject(MAT_DIALOG_DATA) private data: any,
-    private dialogRef: MatDialogRef<ConfirmationDialog>) {
+    private dialogRef: MatDialogRef<ConfirmationDialog>
+    */
+    ) {
+      /*
       if(data){
     this.message = data.message || this.message;
     if (data.buttonText) {
@@ -21,10 +25,11 @@ export class ConfirmationDialog {
       this.cancelButtonText = data.buttonText.cancel || this.cancelButtonText;
     }
       }
+    */
   }
 
   onConfirmClick(): void {
-    this.dialogRef.close(true);
+    //this.dialogRef.close(true);
   }
 
 }
