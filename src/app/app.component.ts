@@ -3,7 +3,8 @@ import { RouterOutlet, RouterLink, RouterLinkActive, Router } from '@angular/rou
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenu, MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
-//import { MatButtonModule } from '@angular/material/button';
+import { MatButtonModule } from '@angular/material/button';
+import { MatTooltipModule } from '@angular/material/tooltip';
 //import { MatDialog } from '@angular/material/dialog';
 import { TooltipPosition } from '@angular/material/tooltip';
 //import { MatDialogModule } from '@angular/material/dialog';
@@ -18,7 +19,8 @@ import { TooltipPosition } from '@angular/material/tooltip';
     MatToolbarModule,
     MatMenuModule,
     MatIconModule,
-    //MatButtonModule,
+    MatButtonModule,
+    MatTooltipModule,
     //MatDialogModule
   ],
   templateUrl: './app.component.html',
