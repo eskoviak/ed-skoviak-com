@@ -33,7 +33,9 @@ export class ContactUsComponent {
     'User-Agent': 'Angular ESC',
     'Accept': '*/*',
     'Access-Control-Allow-Origin': '*',
-    'Connection': 'keep-alive'
+    'Connection': 'keep-alive',
+    'Access-Control-Request-Method' : 'POST',
+    'Access-Control-Request-Headers': 'content-type,x-pingother',
   })
   
   constructor(private router: Router, private http: HttpClient) { }
