@@ -29,13 +29,10 @@ export class ContactUsComponent {
   messageControl = new FormControl('');
 
   httpHeaders = new HttpHeaders({
-    'Content-Type': 'application/json',
-    'User-Agent': 'Angular ESC',
     'Accept': '*/*',
     'Access-Control-Allow-Origin': '*',
     'Connection': 'keep-alive',
     'Access-Control-Request-Method' : 'POST',
-    'Access-Control-Request-Headers': 'content-type,x-pingother',
   })
   
   constructor(private router: Router, private http: HttpClient) { }
@@ -67,6 +64,7 @@ export class ContactUsComponent {
       {
         body: JSON.stringify(msgData),
         headers: this.httpHeaders,
+        reportProgress: true,
         observe: "response"
       }
     ).subscribe({
