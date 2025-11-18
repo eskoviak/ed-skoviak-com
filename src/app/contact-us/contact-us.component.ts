@@ -29,6 +29,7 @@ export class ContactUsComponent {
   messageControl = new FormControl('');
 
   httpHeaders = new HttpHeaders({
+    'Host' : '172.19.90.86',
     'Accept': '*/*',
     'Access-Control-Allow-Origin': '*',
     'Connection': 'keep-alive',
