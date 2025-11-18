@@ -7,6 +7,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatTooltipModule } from '@angular/material/tooltip';
 //import { MatDialog } from '@angular/material/dialog';
 import { TooltipPosition } from '@angular/material/tooltip';
+import { MarkdownModule } from 'ngx-markdown';
 //import { MatDialogModule } from '@angular/material/dialog';
 //import { ConfirmationDialog } from './dialogs/confirmation-dialog.component';
  
