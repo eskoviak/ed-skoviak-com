@@ -27,7 +27,8 @@ export class ContactUsComponent {
 
   // Set the correct headers for sending JSON data.
   httpHeaders = new HttpHeaders({
-    'Content-Type': 'application/json'
+    'Content-Type': 'application/json',
+    'Accept': '*/*'
   });
 
   constructor(private router: Router, private http: HttpClient) { }
@@ -56,7 +57,12 @@ export class ContactUsComponent {
         }
       },
       error: (error) => {
+        // this is a hack--we get this error. even though the email send completes.
+        // ISSUE 2
+        // Log the error
         console.error('Error sending email data', error);
+        // and go home
+        this.router.navigate(['/home']);
       },
       complete: () => {
         console.info('HTTP request complete');

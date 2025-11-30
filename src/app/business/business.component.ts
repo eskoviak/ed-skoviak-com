@@ -9,7 +9,7 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrl: './business.component.css'
 })
 export class BusinessComponent {
-  title = "What or Who is the Business?"
+  title = "Who are the Business Stakeholders?"
 
   constructor() { }
 
