@@ -1,5 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home',
@@ -7,21 +8,17 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  title = "Our Philosophy"
-  body: any;
+  title = "Our Philosophy and Focus"
+  //body: any;
+  html?: SafeHtml;
 
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private sanitizer: DomSanitizer) { }
 
-  ngOnInit(): void {
-    //this.fetchData();
-  }
-
-  fetchData() {
-    this.http.get('https://storage.cloud.google.com/esc_cdn/esc_home.html.txt').subscribe(data => {
-      this.body = data;
-      console.log(this.body);
-    }); 
+  ngOnInit(){
+    this.http.get('assets/pages/esc_home.html', { responseType: 'text' }).subscribe(content => {
+      this.html = this.sanitizer.bypassSecurityTrustHtml(content);
+    });
   }
 }
 

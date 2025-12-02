@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
-import { ConfirmationDialog } from '../dialogs/confirmation-dialog.component';
-import { MatDialog } from '@angular/material/dialog';
+//import { ConfirmationDialog } from '../dialogs/confirmation-dialog.component';
+//import { MatDialog } from '@angular/material/dialog';
+import { HttpClient } from '@angular/common/http';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-business',
@@ -10,18 +12,13 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class BusinessComponent {
   title = "Who are the Business Stakeholders?"
+  html?: SafeHtml;
 
-  constructor() { }
+  constructor(private http: HttpClient, private sanitizer: DomSanitizer) { }
 
-  /*
-  openConfirmationDialog() {
-    const dialogRef = this.dialog.open(ConfirmationDialog, {
-      data: {
-        title: 'Confirmation',
-        message: 'Are you sure you want to go forward'
-      }
+  ngOnInit(){
+    this.http.get('assets/pages/esc_business.html', { responseType: 'text' }).subscribe(content => {
+      this.html = this.sanitizer.bypassSecurityTrustHtml(content);
     });
-
   }
-  */
 }
