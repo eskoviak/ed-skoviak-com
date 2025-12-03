@@ -74,3 +74,19 @@ a {
 .pagebg {
   background-image: linear-gradient(rgba(85, 172, 243, 0.137), rgba(127, 148, 187, 0.027));
 }
+
+.pagebg_technology {
+  background-image: linear-gradient(rgba(222, 132, 240, 0.137), rgba(237, 199, 244, 0.027));
+}
+
+.pagebg_application {
+  background-image: linear-gradient(rgba(30, 236, 232, 0.137), rgba(176, 239, 240, 0.027));
+}
+
+.pagebg_data {
+  background-image: linear-gradient(rgba(231, 214, 62, 0.718), rgba(242, 212, 188, 0.027));
+}
+
+.pagebg_business {
+  background-image: linear-gradient(rgba(123, 236, 57, 0.137), rgba(174, 188, 140, 0.027));
+}
