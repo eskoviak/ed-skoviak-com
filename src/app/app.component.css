@@ -59,10 +59,10 @@ main {
     padding: 2rem;
     box-sizing: inherit;
     position: relative;
-    background-image: url("/public/assets/NorthShoreBeach.png")
 }
 
 img {
+    border: none;
     border-radius: 4px;
 }
 
@@ -75,8 +75,10 @@ img {
     display: grid;
     justify-content: space-around;
     width: 100%;
-    max-width: 700px;
+    max-width: 960px;
     margin-bottom: 1rem;
+    font-family: "Georgial", serif;
+    font-size: x-large;
 }
 
 .content h1 {

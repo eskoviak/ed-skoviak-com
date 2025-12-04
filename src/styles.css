@@ -42,11 +42,11 @@ a {
 
 .card {
   border-radius: 4px;
-  border: 1px solid #eee;
+  border: none;
   background-color: #d3e4ff;
   height: 40px;
   width: 200px;
-  margin: 8px;
+  margin: 0px;
   padding: 16px;
   display: flex;
   flex-direction: row;
@@ -84,7 +84,8 @@ a {
 }
 
 .pagebg_data {
-  background-image: linear-gradient(rgba(231, 214, 62, 0.718), rgba(242, 212, 188, 0.027));
+  background-image: linear-gradient(peachpuff, rgba(242, 212, 188, 0.027));
+  color: brown
 }
 
 .pagebg_business {

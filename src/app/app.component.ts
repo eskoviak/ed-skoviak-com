@@ -37,6 +37,7 @@ export class AppComponent {
   constructor(private router: Router) { }
 
   onClickContactMe(event: Event) {
+    console.log(event)
     console.log('Routing to Contact Us page');
     this.router.navigate(['contact-us']);
   }
