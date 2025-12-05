@@ -7,16 +7,6 @@ body {
 
 body {
   margin: 0;
-  font-family: Georgia, serif;
-}
-
-html,
-body {
-  height: 100%;
-}
-
-body {
-  margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
@@ -24,6 +14,21 @@ a {
   text-decoration: none;
   color: gray;
 }
+
+img {
+  border: none;
+  border-radius: 4px;
+  max-width: 73%;
+  height: auto;
+}
+
+img.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 73%;
+}
+
 
 .button-container {
   width: 100%;
@@ -46,7 +51,7 @@ a {
   background-color: #d3e4ff;
   height: 40px;
   width: 200px;
-  margin: 0px;
+  margin: 4px;
   padding: 16px;
   display: flex;
   flex-direction: row;
@@ -72,22 +77,29 @@ a {
 }
 
 .pagebg {
-  background-image: linear-gradient(rgba(85, 172, 243, 0.137), rgba(127, 148, 187, 0.027));
+  background-image: linear-gradient(rgba(66, 163, 241, 0.137), rgba(127, 148, 187, 0.027));
 }
-
-.pagebg_technology {
-  background-image: linear-gradient(rgba(222, 132, 240, 0.137), rgba(237, 199, 244, 0.027));
+.pagebg_business {
+  background-image: linear-gradient(greenyellow, rgba(174, 188, 140, 0.027));
+  color: rgb(6, 123, 35);
 }
-
-.pagebg_application {
-  background-image: linear-gradient(rgba(30, 236, 232, 0.137), rgba(176, 239, 240, 0.027));
-}
-
 .pagebg_data {
   background-image: linear-gradient(peachpuff, rgba(242, 212, 188, 0.027));
   color: brown
 }
-
-.pagebg_business {
-  background-image: linear-gradient(rgba(123, 236, 57, 0.137), rgba(174, 188, 140, 0.027));
+.pagebg_application {
+  background-image: linear-gradient(aqua, rgba(176, 239, 240, 0.027));
+  color: rgb(52, 2, 145);
 }
+.pagebg_technology {
+  background-image: linear-gradient(plum, rgba(237, 199, 244, 0.027));
+  color: purple
+}
+
+
+
+
+
+
+
+

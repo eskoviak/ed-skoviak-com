@@ -50,21 +50,19 @@ p {
     color: var(--gray-700);
 }
 
+
+
 main {
     width: 100%;
     min-height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 2rem;
+    padding: 1rem;
     box-sizing: inherit;
     position: relative;
 }
 
-img {
-    border: none;
-    border-radius: 4px;
-}
 
 .angular-logo {
     max-width: 9.2rem;
@@ -75,7 +73,7 @@ img {
     display: grid;
     justify-content: space-around;
     width: 100%;
-    max-width: 960px;
+    max-width: 1340px;
     margin-bottom: 1rem;
     font-family: "Georgial", serif;
     font-size: x-large;
@@ -202,26 +200,32 @@ img {
     opacity: 0.8;
 }
 
-/* Button Classes */
+/* Button and Page Background Classes */
+
+
+
+
+
+
+
 .business-button {
     background-color: greenyellow;
     color: rgb(6, 123, 35);
 }
-
 .data-button {
     background-color: peachpuff;
-    color: rgb(52, 2, 145);
+    color: brown;
 }
-
 .application-button {
     background-color: aqua;
     color: rgb(52, 2, 145);
 }
-
 .technology-button {
     background-color: plum;
     color: purple;
 }
+
+
 
 
 
