@@ -1,64 +1,65 @@
 <main class="main">
   <div class="content">
 
-    <mat-toolbar>
-      <mat-toolbar-row>
-        <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon"
-          [mat-menu-trigger-for]="topMenu">
-          <mat-icon>menu</mat-icon>
-        </button>
-        <mat-menu #topMenu="matMenu">
-          <button mat-menu-item>
-            <mat-icon>home</mat-icon>
-            <a routerLink="home" routerLinkActive="active">Home</a>
+    <div class="mat-toolbar">
+      <mat-toolbar>
+        <mat-toolbar-row>
+          <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon"
+            [mat-menu-trigger-for]="topMenu">
+            <mat-icon>menu</mat-icon>
           </button>
-        </mat-menu>
-        <a routerLink="home" routerLinkActive="active">Ed Skoviak Computing</a>
-        
-        <span class="toolbar-spacer"></span>
+          <mat-menu #topMenu="matMenu">
+            <button mat-menu-item>
+              <mat-icon>home</mat-icon>
+              <a routerLink="home" routerLinkActive="active">Home</a>
+            </button>
+          </mat-menu>
+          <a routerLink="home" routerLinkActive="active">Ed Skoviak Computing</a>
 
-        <button mat-icon-button class="example-icon" aria-label="Example icon-button with mail icon"
-          (click)="onClickContactMe($event)">
-          <mat-icon>mail</mat-icon>
-        </button>
-        <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-          <mat-icon>share</mat-icon>
-        </button>
-      </mat-toolbar-row>
+          <span class="toolbar-spacer"></span>
 
-      <mat-toolbar-row>
-        <span class="toolbar-spacer"></span>
-        <button mat-button class="business-button" matTooltip="Business Architecture" [matTooltipPosition]='position'
-          aria-label="Go to the Business Architecture page" (click)="onClick($event, 'Business')">
-          Business
-        </button>
-        &nbsp;&nbsp;
-        <button mat-button class="data-button" matTooltip="Data Architecture" [matTooltipPosition]='position'
-          aria-label="Go to the Data Architecture page" (click)="onClick($event, 'Data')">
-          Data
-        </button>
-        &nbsp;&nbsp;
-        <button mat-button class="application-button" matTooltip="Application Architecture"
-          [matTooltipPosition]='position' aria-label="Go to the Business Architecture page"
-          (click)="onClick($event, 'Application')">
-          Application
-        </button>
-        &nbsp;&nbsp;
-        <button mat-button class="technology-button" matTooltip="Technology Architecture"
-          [matTooltipPosition]='position' aria-label="Go to the Business Architecture page"
-          (click)="onClick($event, 'Technology')">
-          Technology
-        </button>
-        <span class="toolbar-spacer"></span>
-      </mat-toolbar-row>
-    </mat-toolbar>
+          <button mat-icon-button class="example-icon" aria-label="Go to the Contact Me page" matTooltip="Contact Me" [matTooltipPosition]='position'
+            (click)="onClick($event, 'Contact-Me')">
+            <mat-icon>mail</mat-icon>
+          </button>
+          <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+            <mat-icon>share</mat-icon>
+          </button>
+        </mat-toolbar-row>
 
+        <mat-toolbar-row>
+          <span class="toolbar-spacer"></span>
+          <button mat-button class="business-button" matTooltip="Business Architecture" [matTooltipPosition]='position'
+            aria-label="Go to the Business Architecture page" (click)="onClick($event, 'Business')">
+            Business
+          </button>
+          &nbsp;&nbsp;
+          <button mat-button class="data-button" matTooltip="Data Architecture" [matTooltipPosition]='position'
+            aria-label="Go to the Data Architecture page" (click)="onClick($event, 'Data')">
+            Data
+          </button>
+          &nbsp;&nbsp;
+          <button mat-button class="application-button" matTooltip="Application Architecture"
+            [matTooltipPosition]='position' aria-label="Go to the Business Architecture page"
+            (click)="onClick($event, 'Application')">
+            Application
+          </button>
+          &nbsp;&nbsp;
+          <button mat-button class="technology-button" matTooltip="Technology Architecture"
+            [matTooltipPosition]='position' aria-label="Go to the Business Architecture page"
+            (click)="onClick($event, 'Technology')">
+            Technology
+          </button>
+          <span class="toolbar-spacer"></span>
+        </mat-toolbar-row>
+      </mat-toolbar>
+    </div>
 
     <router-outlet />
 
     <footer>
       <div class="footer">
-        &copy; 2025 Ed Skoviak Computing
+        <h3 class="center">&copy; 2025 Ed Skoviak Computing</h3>
       </div>
     </footer>
   </div>

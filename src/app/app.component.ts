@@ -55,6 +55,9 @@ export class AppComponent {
     } else if (page == 'Technology') {
       console.log('Routing to Technology page');
       this.router.navigate(['technology']);
+    } else if (page == 'Contact-Me') {
+      console.log('Routing to Contact Us page');
+      this.router.navigate(['contact-us']);
     }
   }
 
