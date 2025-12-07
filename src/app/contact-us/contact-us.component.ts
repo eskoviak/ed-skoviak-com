@@ -1,25 +1,54 @@
-import { Component, Injectable } from '@angular/core';
+import { Component, Inject } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { MatDialogRef, MAT_DIALOG_DATA, MatDialogContent, MatDialogActions, MatDialogClose } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+
+interface DialogData {
+  message: string,
+  buttonText : {
+    submit: string;
+    cancel: string;
+  }
+}
 
 interface MsgData {
   name: string | null;
   email: string | null;
   message: string | null;
 }
-
 @Component({
   selector: 'app-contact-us',
-  imports: [ ReactiveFormsModule],
+  imports: [ ReactiveFormsModule,
+    CommonModule,
+    MatDialogContent,
+    MatDialogActions,
+    MatDialogClose,
+    MatButtonModule,
+  ],
   templateUrl: './contact-us.component.html',
-  styleUrls: ['./contact-us.component.css']
+  styleUrls: ['./contact-us.component.css'],
+  standalone: true,
 })
-@Injectable({
-  providedIn: 'root'
-})
+
+
+
 export class ContactUsComponent {
   title = "Contact Us";
+  dialogData = {
+    message: 'Please fill out the form below to contact us.',
+    buttonText: {
+      submit: 'Submit',
+      cancel: 'Cancel'
+    }
+  }
+
+  constructor(private router: Router, 
+    private http: HttpClient,
+    @Inject(MAT_DIALOG_DATA) public data: DialogData,
+    public dialogRef: MatDialogRef<ContactUsComponent>) { }
 
   nameControl = new FormControl('');
   emailControl = new FormControl('');
@@ -31,7 +60,10 @@ export class ContactUsComponent {
     'Accept': '*/*'
   });
 
-  constructor(private router: Router, private http: HttpClient) { }
+  onCancelClick(): void {
+    console.log('Contact-Us Dialog canceled');
+    this.dialogRef.close();
+  }
 
   onSubmit() {
     const msgData: MsgData = {

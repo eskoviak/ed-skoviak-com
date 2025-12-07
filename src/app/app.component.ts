@@ -1,5 +1,10 @@
 import { Component } from '@angular/core';
-import { RouterOutlet, RouterLink, RouterLinkActive, Router } from '@angular/router';
+import {
+  RouterOutlet,
+  RouterLink,
+  RouterLinkActive,
+  Router,
+} from '@angular/router';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenu, MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
@@ -7,10 +12,20 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatTooltipModule } from '@angular/material/tooltip';
 //import { MatDialog } from '@angular/material/dialog';
 import { TooltipPosition } from '@angular/material/tooltip';
-import { MarkdownModule } from 'ngx-markdown';
+//import { MarkdownModule } from 'ngx-markdown';
 //import { MatDialogModule } from '@angular/material/dialog';
-//import { ConfirmationDialog } from './dialogs/confirmation-dialog.component';
- 
+import { ConfirmationDialogComponent } from './dialogs/confirmation-dialog.component';
+import { MatDialog } from '@angular/material/dialog';
+import { ContactUsComponent } from './contact-us/contact-us.component';
+
+interface DialogData {
+  message: string,
+  buttonText : {
+    submit: string;
+    cancel: string;
+  }
+}
+
 @Component({
   selector: 'app-root',
   imports: [
@@ -25,19 +40,18 @@ import { MarkdownModule } from 'ngx-markdown';
     //MatDialogModule
   ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
+  standalone: true,
 })
-
-
 export class AppComponent {
   title = 'Our Philosophy';
   positionOptions: TooltipPosition[] = ['below', 'above', 'left', 'right'];
   position = this.positionOptions[1];
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, public dialog: MatDialog) {}
 
   onClickContactMe(event: Event) {
-    console.log(event)
+    console.log(event);
     console.log('Routing to Contact Us page');
     this.router.navigate(['contact-us']);
   }
@@ -61,28 +75,45 @@ export class AppComponent {
     }
   }
 
-  /*
   openDialog() {
-    const dialogRef = this.dialog.open(ConfirmationDialog, {
+    const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
       data: {
         message: 'This is an over-ridden message',
         buttonText: {
           ok: 'Yea',
-          cancel: 'Nay'
-        }
-      }
+          cancel: 'Nay',
+        },
+      },
     });
-    //const snack = this.snackBar.open('Snack bar open before dialog');
 
-    dialogRef.afterClosed().subscribe((confirmed: boolean) => {
-      if (confirmed) {
-        console.log('You clicked Save')
-      }
-      else {
-        console.log('You clicked No')
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result=='confirmed') {
+        console.log('You clicked Save');
+      } else {
+        console.log('You clicked No');
       }
     });
-    
   }
-  */  
+
+  openContactUsDialog() {
+    const dialogData : DialogData = {
+      message: 'Please fill out the form below to contact us.',
+      buttonText: {
+        submit: 'Submit',
+        cancel: 'Cancel'
+      }
+    };
+    const dialogRef = this.dialog.open(ContactUsComponent, {
+      data: dialogData,
+    });
+
+  dialogRef.afterClosed().subscribe((result) => {
+      console.log('The Contact-Us dialog was submitted');
+      if(result == 'submit') {
+        console.log('Form submitted');
+      } else {
+        console.log('Form not submitted');
+      }
+    });
+  }
 }

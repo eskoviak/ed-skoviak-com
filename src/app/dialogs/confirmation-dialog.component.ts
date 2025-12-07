@@ -1,35 +1,21 @@
 import { Component, Inject } from '@angular/core';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA, MatDialogModule } from '@angular/material/dialog';
+import { CommonModule } from '@angular/common';
+import { MatDialogRef, MAT_DIALOG_DATA, MatDialogContent, MatDialogActions, MatDialogClose, MatDialogTitle } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
-  selector: 'confirmation-dialog',
-  imports: [MatDialogModule],
+  standalone: true,
+  selector: 'app-confirmation-dialog',
+  imports: [CommonModule, MatDialogContent, MatDialogActions, MatDialogClose, MatButtonModule, MatDialogTitle],
   templateUrl: './confirmation-dialog.html',
   styleUrls: ['./dialogs.css']
 })
-export class ConfirmationDialog {
-  message: string = "Are you sure?"
-  confirmButtonText = "Yes"
-  cancelButtonText = "Cancel"
-  constructor(
-    /*
-    @Inject(MAT_DIALOG_DATA) private data: any,
-    private dialogRef: MatDialogRef<ConfirmationDialog>
-    */
-    ) {
-      /*
-      if(data){
-    this.message = data.message || this.message;
-    if (data.buttonText) {
-      this.confirmButtonText = data.buttonText.ok || this.confirmButtonText;
-      this.cancelButtonText = data.buttonText.cancel || this.cancelButtonText;
-    }
-      }
-    */
-  }
+export class ConfirmationDialogComponent {
+  constructor(@Inject(MAT_DIALOG_DATA) public data: { message: string, buttonText: { ok: string, cancel: string } },public dialogRef: MatDialogRef<ConfirmationDialogComponent>) {}
 
-  onConfirmClick(): void {
-    //this.dialogRef.close(true);
+  onCancelClick(): void {
+    console.log('Dialog canceled');
+    this.dialogRef.close();
   }
 
 }
