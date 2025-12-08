@@ -1,23 +1,22 @@
-<img class="center" src="assets/WoodsInUP.png" alt="Manmade Infrastructure" matTooltip="Manmade Infrastructure">
+<p >{{ data.text }}</p>
+<mat-dialog-content>
+    <p>
+        <label for="name">Name</label><br>
+        <input id="name" type="text" width="80%" [formControl]="nameControl">
+    </p>
+    <p>
+        <label for="email">Email</label><br>
+        <input id="email" type="text" [formControl]="emailControl">
+    </p>
+    <p>
+        <label for="'message">Message</label><br>
+        <textarea id="message" width="80%" rows="4" [formControl]="messageControl"></textarea>
+    </p>
+</mat-dialog-content>
 
 <div>
-<h1 class="center">{{ title }}</h1>
+    <mat-dialog-actions>
+        <button mat-button color="primary" (click)="onCancelClick()">{{data.buttonText.cancel}}</button>
+        <button mat-button cdkFocusInitial (click)="onSubmitClick()">{{data.buttonText.submit}}</button>
+    </mat-dialog-actions>
 </div>
-<div class="pagebg">
-<p>
-    <label for="name">Name</label><br>
-    <input id="name" type="text" width="50%" [formControl]="nameControl">
-</p>
-<p>
-    <label for="email">Email</label><br>
-    <input id="email" type="text" [formControl]="emailControl">
-</p>
-<p>
-    <label for="'message">Message</label><br>
-    <textarea id="message" rows="4" [formControl]="messageControl"></textarea>
-</p>
-
-
-<button (click)="onSubmit()">Submit</button>
-</div> 
-

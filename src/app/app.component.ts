@@ -1,16 +1,33 @@
 import { Component } from '@angular/core';
-import { RouterOutlet, RouterLink, RouterLinkActive, Router } from '@angular/router';
+import {
+  RouterOutlet,
+  RouterLink,
+  RouterLinkActive,
+  Router,
+} from '@angular/router';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatMenu, MatMenuModule } from '@angular/material/menu';
+import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTooltipModule } from '@angular/material/tooltip';
-//import { MatDialog } from '@angular/material/dialog';
 import { TooltipPosition } from '@angular/material/tooltip';
-import { MarkdownModule } from 'ngx-markdown';
-//import { MatDialogModule } from '@angular/material/dialog';
-//import { ConfirmationDialog } from './dialogs/confirmation-dialog.component';
- 
+import { ConfirmationDialogComponent } from './dialogs/confirmation-dialog.component';
+import { MatDialog } from '@angular/material/dialog';
+import { ContactUsComponent } from './contact-us/contact-us.component';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+
+interface DialogData {
+  text: string;
+  buttonText: {
+    submit: string;
+    cancel: string;
+  };
+  name: string | null;
+  email: string | null;
+  message: string | null;
+  status: string | null;
+}
+
 @Component({
   selector: 'app-root',
   imports: [
@@ -22,22 +39,26 @@ import { MarkdownModule } from 'ngx-markdown';
     MatIconModule,
     MatButtonModule,
     MatTooltipModule,
-    //MatDialogModule
   ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
+  standalone: true,
 })
-
-
 export class AppComponent {
   title = 'Our Philosophy';
   positionOptions: TooltipPosition[] = ['below', 'above', 'left', 'right'];
   position = this.positionOptions[1];
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, public dialog: MatDialog, private http : HttpClient) {}
+
+    // Set the correct headers for sending JSON data.
+  httpHeaders = new HttpHeaders({
+    'Content-Type': 'application/json',
+    //'Accept': '*/*',
+  });
 
   onClickContactMe(event: Event) {
-    console.log(event)
+    console.log(event);
     console.log('Routing to Contact Us page');
     this.router.navigate(['contact-us']);
   }
@@ -61,28 +82,86 @@ export class AppComponent {
     }
   }
 
-  /*
   openDialog() {
-    const dialogRef = this.dialog.open(ConfirmationDialog, {
+    const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
       data: {
         message: 'This is an over-ridden message',
         buttonText: {
           ok: 'Yea',
-          cancel: 'Nay'
-        }
-      }
+          cancel: 'Nay',
+        },
+      },
     });
-    //const snack = this.snackBar.open('Snack bar open before dialog');
 
-    dialogRef.afterClosed().subscribe((confirmed: boolean) => {
-      if (confirmed) {
-        console.log('You clicked Save')
-      }
-      else {
-        console.log('You clicked No')
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result == 'confirmed') {
+        console.log('You clicked Save');
+      } else {
+        console.log('You clicked No');
       }
     });
-    
   }
-  */  
+
+  openContactUsDialog() {
+    const dialogData: DialogData = {
+      text:
+        'Please fill out the form below and we will get back to you as soon as possible.',
+      buttonText: {
+        submit: 'Submit',
+        cancel: 'Cancel',
+      },
+      name: null,
+      email: null,
+      message: null,
+      status: null,  
+    };
+    const dialogRef = this.dialog.open(ContactUsComponent, {
+      data: dialogData,
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log(result);
+      console.log('The Contact-Us dialog was closed');
+      if (result.status == 'submit') {
+        console.log('Submit');
+        this.onSubmit(result);
+      } else {
+        console.log('Cancel');
+      }
+    });
+  }
+
+    onSubmit(msgData: DialogData) {
+    console.log('Sending email data:', msgData);
+
+    // Use http.post to send the data to your backend service.
+    this.http
+      .post('https://mail-sender-821892242376.us-south1.run.app', msgData, {
+        headers: this.httpHeaders,
+        observe: 'response', // Observe the full HTTP response.
+      })
+      .subscribe({
+        next: (response) => {
+          console.log('Email data sent successfully', response);
+          if (response.status === 200) {
+            // Navigate to home only on successful submission.
+            this.router.navigate(['/home']);
+          } else {
+            console.error('Submission failed with status:', response.status);
+          }
+        },
+        error: (error) => {
+          // this is a hack--we get this error. even though the email send completes.
+          // ISSUE 2
+          // Log the error
+          console.error('Error sending email data', error);
+          // and go home
+          this.router.navigate(['/home']);
+        },
+        complete: () => {
+          console.info('HTTP request complete');
+        },
+      });
+  }
+
 }
