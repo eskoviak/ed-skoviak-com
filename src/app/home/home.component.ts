@@ -12,7 +12,6 @@ export class HomeComponent implements OnInit {
   //body: any;
   html?: SafeHtml;
 
-
   constructor(private http: HttpClient, private sanitizer: DomSanitizer) { }
 
   ngOnInit(){
