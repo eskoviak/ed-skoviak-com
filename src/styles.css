@@ -8,11 +8,12 @@ body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+  background: "/assets/Hor and Piscah.png";
 }
 
 h1 {
     font-size: 3.125rem;
-    color: var(--gray-900);
+    color: white;
     font-weight: 500;
     line-height: 100%;
     letter-spacing: -0.125rem;
@@ -36,10 +37,11 @@ a {
 }
 
 img {
-  border: none;
+  border: 1px;
   border-radius: 4px;
   max-width: 73%;
   height: auto;
+  padding: 5px; 
 }
 
 img.center {
@@ -106,20 +108,28 @@ img.center {
   background-image: linear-gradient(rgba(66, 163, 241, 0.137), rgba(127, 148, 187, 0.027));
 }
 .pagebg_business {
+  background-color: white;
   background-image: linear-gradient(greenyellow, rgba(174, 188, 140, 0.027));
   color: rgb(6, 123, 35);
+  opacity: 1;
 }
 .pagebg_data {
+  background-color: white;
   background-image: linear-gradient(peachpuff, rgba(242, 212, 188, 0.027));
-  color: brown
+  color: brown;
+  opacity: 1;
 }
 .pagebg_application {
+  background-color: white;
   background-image: linear-gradient(aqua, rgba(176, 239, 240, 0.027));
   color: rgb(52, 2, 145);
+  opacity: 1;
 }
 .pagebg_technology {
+  background-color: white;
   background-image: linear-gradient(plum, rgba(237, 199, 244, 0.027));
-  color: purple
+  color: rgba(87, 2, 100, 0.925);
+  opacity: 1;
 }
 
 
