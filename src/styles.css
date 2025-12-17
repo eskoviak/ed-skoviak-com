@@ -27,9 +27,19 @@ h1.center {
     text-align: center;
 }
 
+h3 {
+  padding: 2px;
+  margin: 10px;
+}
+
 h3.center {
     text-align: center;
 } 
+
+p {
+  padding: 2px;
+  margin: 10px;
+}
 
 a {
   text-decoration: none;
@@ -51,6 +61,33 @@ img.center {
   width: 73%;
 }
 
+table {
+  border-collapse: collapse;
+  border: 2px solid rgb(2, 85, 23);
+  margin: 10px;
+}
+
+tr {
+  border: 1px solid black;
+}
+
+td, th {
+  padding: 10px;
+  text-align: left;
+}
+
+td.multirow {
+  vertical-align: center;
+  align-content: center;
+  border: 1px solid rgb(2, 85, 23);
+}
+
+caption {
+  font-size: 1.5rem;
+  margin: 10px;
+  font-weight: ittalic;
+  caption-side: bottom;
+}
 
 .button-container {
   width: 100%;
@@ -105,12 +142,14 @@ img.center {
 }
 
 .pagebg {
+  background-color: white;
   background-image: linear-gradient(rgba(66, 163, 241, 0.137), rgba(127, 148, 187, 0.027));
+  opacity: 1;
 }
 .pagebg_business {
   background-color: white;
   background-image: linear-gradient(greenyellow, rgba(174, 188, 140, 0.027));
-  color: rgb(6, 123, 35);
+  color: rgb(2, 85, 23);
   opacity: 1;
 }
 .pagebg_data {
