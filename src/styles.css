@@ -67,9 +67,18 @@ table {
   margin: 10px;
 }
 
+table.noframe {
+  border: 0px;
+  margin: 0px;
+}
+
 tr {
   border: 1px solid black;
 }
+
+tr.noframe {
+  border: 0px;
+} 
 
 td, th {
   padding: 10px;
@@ -143,7 +152,7 @@ caption {
 
 .pagebg {
   background-color: white;
-  background-image: linear-gradient(rgba(66, 163, 241, 0.137), rgba(127, 148, 187, 0.027));
+  background-image: linear-gradient(rgba(22, 22, 186, 0.137), rgba(127, 148, 187, 0.027));
   opacity: 1;
 }
 .pagebg_business {
