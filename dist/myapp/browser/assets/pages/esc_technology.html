@@ -1,8 +1,23 @@
 <p>
-    The Technology Layer is responsible for the technical implementation of the system, including the infrastructure, platforms, and tools used to support the application layer. It encompasses the hardware, software, and network components that enable the application to function effectively and efficiently.
+    The Technology Layer supports the Data and Application Layers. This includes the infrastructure, platforms, and tools used to support those layers. It encompasses the hardware, software, and network components that enable the data and application(s) to function effectively and securely.
 </p>
 <p>    
-    Architects working at this layer focus on ensuring scalability, reliability, security, and performance of the technology stack. They make decisions regarding cloud services, databases, middleware, and other technical resources that form the backbone of the system
+    Architects working at this layer focus on ensuring scalability, reliability, security, and performance of the technology stack. They make decisions regarding premise and cloud services, databases, middleware, and other technical resources that form the backbone of the system.
 </p>
-<p>
-    Key considerations at the Technology Layer include selecting appropriate technologies, designing for fault tolerance, optimizing resource utilization, and ensuring compliance with industry standards and best practices.  But this is only one part of the overall architecture.  The Enterprise Architecture practice guides the alignment of technology with business goals, ensuring that the technology layer supports the broader objectives of the organization.  The business fuctions (in the Data and Application layers) must be supported by the technology layer, and the technology layer must be designed to meet the needs of the business.
+<h4>Technology Decisions and Business Outcomes</h4>
+   <p>
+   Technology layer decisions directly impact business outcomes, though the connection isn't always obvious to non-technical stakeholders. Selecting cloud infrastructure affects speed to market for new capabilities. Database choices influence application performance and user satisfaction. Security architecture decisions determine both risk exposure and operational friction. The EA practice ensures technology layer decisions are made with clear business outcome targets: faster deployment cycles, improved system reliability measured in uptime and response time, lower total cost of ownership, and reduced security incidents. Technology excellence means business capability delivery, not just technical sophistication.
+   </p>
+<h4>Technology Layer Considerations for AI</h4>
+   <p>
+   AI introduces specific technology layer requirements that architects must address. AI inference workloads may require GPU compute resources. Vector databases enable semantic search capabilities. API gateways manage model serving and version control. Model monitoring systems track performance degradation over time. The EA practice must balance these AI-specific technology needs with existing infrastructure investments, ensuring that business applications can leverage AI capabilities without requiring complete technology platform replacement. The goal is enabling AI-driven business outcomes through pragmatic technology decisions, not pursuing AI technology for its own sake.
+   </p>
+      <h4>Communicating Technology Decisions</h4>
+   <p>
+   Technology layer decisions require different communication approaches for different stakeholders. The C-Suite needs to understand total cost of ownership, risk mitigation, and business capability enablement. Business leaders need to understand how technology choices affect their ability to deliver business functions. IT teams need technical specifications and operational implications. Security teams need compliance and risk assessments. The EA practice translates technology architecture into each stakeholder's language, ensuring informed decisions rather than technology choices made in isolation from business context.
+   </p>
+   
+   <p>
+    Key architectural considerations at the Technology Layer include selecting appropriate technologies, designing for fault tolerance, optimizing resource utilization, and ensuring compliance with industry standards and best practices.  But this is only one part of the overall architecture.  The Enterprise Architecture practice guides the alignment of technology with business capability, ensuring that the technology layer supports the broader objectives of the organization.
+</p>
+

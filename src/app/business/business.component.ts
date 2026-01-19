@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 //import { ConfirmationDialog } from '../dialogs/confirmation-dialog.component';
 //import { MatDialog } from '@angular/material/dialog';
 import { HttpClient } from '@angular/common/http';
@@ -10,7 +10,7 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
   templateUrl: './business.component.html',
   styleUrl: './business.component.css'
 })
-export class BusinessComponent {
+export class BusinessComponent implements OnInit{
   title = "Who are the Business Stakeholders?"
   html?: SafeHtml;
 
