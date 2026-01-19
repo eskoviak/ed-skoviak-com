@@ -10,7 +10,7 @@ export class AppRoutes {
 }
 
 export const routes: Routes = [
-    { path: '', redirectTo: 'home', pathMatch: 'full' },
+    { path: '', redirectTo: 'home' , pathMatch: 'full' },
     { path: 'home', component: HomeComponent },
     { path: 'business', component: BusinessComponent},
     { path: 'data', component: DataComponent},

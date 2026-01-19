@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
@@ -11,7 +11,6 @@ export class HomeComponent implements OnInit {
   title = "Our Philosophy and Focus"
   //body: any;
   html?: SafeHtml;
-
 
   constructor(private http: HttpClient, private sanitizer: DomSanitizer) { }
 
